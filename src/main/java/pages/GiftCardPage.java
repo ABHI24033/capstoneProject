@@ -11,14 +11,13 @@ import utils.WaitUtils;
 public class GiftCardPage {
 
     WebDriver driver;
- // Constructor
+    // Constructor
     public GiftCardPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     // Locators using PageFactory
-//    @FindBy(xpath = "//a[@href='/giftcards' and @class='sc-1or3vea-21 gGtXEF']")
     @FindBy(xpath = "//div[@class='sc-1or3vea-19 bfNncl']//a[@href='/giftcards' and text()='Gift Cards']")
     private WebElement giftCardSectionLink;
 
@@ -56,7 +55,6 @@ public class GiftCardPage {
 
     public void clickCheckBalanceButton() {
     	WaitUtils.waitForClickability(driver, checkBalanceButton).click();
-//        checkBalanceButton.click();
     }
 
     public String getErrorMessage() {

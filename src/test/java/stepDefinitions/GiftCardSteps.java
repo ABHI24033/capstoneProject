@@ -3,7 +3,7 @@ package stepDefinitions;
 import org.openqa.selenium.WebDriver;
 
 import hooks.Hooks;
-//import io.cucumber.java.en.Given;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import junit.framework.Assert;
@@ -12,11 +12,7 @@ import pages.GiftCardPage;
 public class GiftCardSteps {
 	WebDriver driver = Hooks.getDriver();
 	GiftCardPage giftcard=new GiftCardPage(driver);
-
-//	@Given("User is on the {string} section")
-//	public void user_is_on_the_section(String string) {
-//	    Passed
-//	}
+	
 	@When("User click on the {string} icon")
 	public void user_click_on_the_icon(String string) {
 	   giftcard.clickCheckBalanceIcon();
@@ -35,13 +31,12 @@ public class GiftCardSteps {
 	}
 	
 //	====================GiftCardNavigation======================
-	@When("User navigate to the {string} section")
-	public void user_navigate_to_the_section(String string) {
+	@When("User navigate to the gift card section")
+	public void user_navigate_to_the_section() {
 	    giftcard.navigateToGiftCardSection();
 	}
 	@Then("User should see the {string} icon displayed")
 	public void user_should_see_the_icon_displayed(String string) {
 		Assert.assertTrue(giftcard.isCheckBalanceIconDisplayed());
-//		giftcard.isCheckBalanceIconDisplayed();
 	}
 }

@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import utils.WaitUtils;
 
@@ -14,7 +13,7 @@ public class CitySearchPage {
 
     private WebDriver driver;
     
- // ======= Constructor =======
+    // ======= Constructor =======
     public CitySearchPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -27,27 +26,21 @@ public class CitySearchPage {
 	@FindBy(xpath = "//div[@class='sc-fv93km-0 cPDWyb']//div[1]//div[1]")
 	private WebElement firstSuggestedCity;
 
-    // City search results list
     @FindBy(xpath = "//div[@class='sc-5d56x9-0 hIDoFD']//span")  
     private List<WebElement> searchResults;
 
-    // Error message when invalid city entered
     @FindBy(xpath = "//div[@class='sc-fv93km-1 fZhJNQ']")   
     private WebElement errorMessage;
 
     @FindBy(xpath = "//li//p")   
     private List<WebElement> cityIcons;
 
-    // City dropdown
     @FindBy(xpath = "//div[@id='common-header-region']//span")   
     private WebElement cityDropdown;
 
-    // "View All Cities" link
-//    @FindBy(xpath = "//p[@class='sc-p6ayv6-0 iwwDFF' and text()='View All Cities']")
     @FindBy(xpath = "//p[text()='View All Cities']")
     private WebElement viewAllCitiesLink;
 
-    // List of cities from "View All Cities" section
     @FindBy(xpath = "//li[@class='sc-1a0jimq-0 hhOIxv']")  
     private List<WebElement> allCitiesList;
 

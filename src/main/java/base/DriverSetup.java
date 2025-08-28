@@ -2,7 +2,6 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -13,7 +12,7 @@ public class DriverSetup {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            String browser = ConfigLoader.getProperty("browser"); // read from config.properties
+            String browser = ConfigLoader.getProperty("browser"); 
 
             switch (browser.toLowerCase()) {
                 case "firefox":
@@ -23,11 +22,7 @@ public class DriverSetup {
                     driver = new EdgeDriver();
                     break;
                 default:
-//                    driver = new ChromeDriver();
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--disable-blink-features=AutomationControlled");
-                    driver = new ChromeDriver(options);
-
+                    driver = new ChromeDriver();
             }
 
             driver.manage().window().maximize();

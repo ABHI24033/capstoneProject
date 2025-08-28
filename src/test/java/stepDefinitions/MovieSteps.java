@@ -24,7 +24,6 @@ public class MovieSteps {
     public void i_should_see_the_link_displayed(String string) {
         Assert.assertTrue(moviePage.isInCinemasNearYouLinkDisplayed());
     }
-
 //    ====================================================================
     @When("I select the first movie from the Recommended Movies section")
     public void i_select_the_first_movie_from_the_recommended_movies_section()  {

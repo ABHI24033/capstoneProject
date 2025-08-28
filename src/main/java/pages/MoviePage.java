@@ -13,12 +13,9 @@ public class MoviePage {
 
     WebDriver driver;
 
-    // Recommended Movies section → list of movies
-//    @FindBy(xpath = "//div[@id='recommended-movies']//div[contains(@class,'movie-card')]")
     @FindBy(xpath = "//div[contains(@class,'sc-133848s-3')]//a[@class='sc-133848s-11 sc-lnhrs7-5 ctsexn bHVBt']")
     private List<WebElement> recommendedMovies;
 
-    // Movie details page elements
     @FindBy(xpath = "//h1[@class='movie-title']")
     private WebElement movieName;
 
@@ -28,22 +25,16 @@ public class MoviePage {
     @FindBy(xpath = "//button[contains(text(),'Book Tickets')]")
     private WebElement bookingOption;
 
-    // Movies tab
-//    @FindBy(xpath = "//a[contains(text(),'Movies')]")
     @FindBy(xpath = "//a[text()='Movies']")
     private WebElement moviesTab;
 
-    // Explore Upcoming Movies link
-//    @FindBy(xpath = "//a[contains(text(),'Explore Upcoming Movies')]")
     @FindBy(xpath = "//img[@alt='Coming Soon']")
     private WebElement exploreUpcomingMoviesImgLink;
 
-    // "In Cinemas Near You" link
-//    @FindBy(xpath = "//a[contains(text(),'In Cinemas Near You')]")
     @FindBy(xpath = "//img[@alt='Now Showing']")
     private WebElement inCinemasNearYouImgLink;
 
-    // ✅ Constructor
+    // Constructor
     public MoviePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

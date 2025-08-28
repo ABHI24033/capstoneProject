@@ -24,7 +24,6 @@ public class LoginPage {
 	}
 
 	// ===== Page Elements =====
-
 	@FindBy(xpath = "//input[@placeholder='Search for your city']")
 	private WebElement citySearchBox;
 

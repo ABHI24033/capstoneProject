@@ -8,6 +8,7 @@ import utils.ScreenshotUtils;
 
 import org.openqa.selenium.WebDriver;
 
+
 public class Hooks {
 	private static WebDriver driver;
 
@@ -19,9 +20,7 @@ public class Hooks {
 	@After
 	public void tearDown(Scenario scenario) {
 		if (scenario.isFailed()) {
-			// Call ScreenshotUtils
 			byte[] screenshot = ScreenshotUtils.captureScreenshot(driver, scenario.getName());
-			System.out.println("Hello"+screenshot);
 			if (screenshot != null) {
 				scenario.attach(screenshot, "image/png", scenario.getName());
 			}

@@ -71,10 +71,6 @@ public class LoginSteps {
         Assert.assertTrue(loginPage.isContinueButtonDisbled(),"Continue button is not disabled");
     }
     
-//    @Then("clean input box")
-//    public void clean_input_box() {
-//    	loginPage.cleanMobileInput();
-//    }
     
     @Then("Verify continue button should enabled")
     public void then_verify_continue_button_should_enabled() {
