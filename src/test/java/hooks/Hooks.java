@@ -7,14 +7,16 @@ import io.cucumber.java.Scenario;
 import utils.ScreenshotUtils;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 
 
 public class Hooks {
 	private static WebDriver driver;
 
-	@Before
+	@Before 
 	public void setUp() {
-		driver = DriverSetup.getDriver();
+		String browser = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("browser");
+		driver = DriverSetup.getDriver(browser);
 	}
 
 	@After
