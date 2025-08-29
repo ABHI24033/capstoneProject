@@ -31,7 +31,7 @@ public class MovieSteps {
     }
     @Then("I should see the movie details page")
     public void i_should_see_the_movie_details_page() {
-       moviePage.isPosterDisplayed();
+       Assert.assertTrue(moviePage.isDetailedPageDisplayed());
     }
     @Then("the movie name should be displayed")
     public void the_movie_name_should_be_displayed() {

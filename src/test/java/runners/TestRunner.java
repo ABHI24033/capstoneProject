@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(features = "features", 
 				glue = { "stepDefinitions", "hooks" },
 //				dryRun = true,
-//				tags = "@ValidCitySearch",
+//				tags = "@UpcomingMovies",
 				plugin = { "pretty", "html:reports/cucumber.html","json:reports/cucumber.json" }, 
 				monochrome = true
 				)

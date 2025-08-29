@@ -16,19 +16,22 @@ public class MoviePage {
     @FindBy(xpath = "//div[contains(@class,'sc-133848s-3')]//a[@class='sc-133848s-11 sc-lnhrs7-5 ctsexn bHVBt']")
     private List<WebElement> recommendedMovies;
 
-    @FindBy(xpath = "//h1[@class='movie-title']")
+    @FindBy(xpath = "//h1[@class='sc-qswwm9-6 ea-drWB']")
     private WebElement movieName;
 
-    @FindBy(xpath = "//img[@class='movie-poster']")
+    @FindBy(xpath = "//section[@class='sc-bsek5f-0 jNOshi']")
     private WebElement moviePoster;
+    
+    @FindBy(xpath = "//h4[text()='About the movie']")
+    private WebElement movieDetailed;
 
-    @FindBy(xpath = "//button[contains(text(),'Book Tickets')]")
+    @FindBy(xpath = "//div[@class='sc-qswwm9-8 fNtHgG']//button//span[text()='Book tickets']")
     private WebElement bookingOption;
 
     @FindBy(xpath = "//a[text()='Movies']")
     private WebElement moviesTab;
 
-    @FindBy(xpath = "//img[@alt='Coming Soon']")
+    @FindBy(xpath = "//a//img[@alt='Coming Soon']")
     private WebElement exploreUpcomingMoviesImgLink;
 
     @FindBy(xpath = "//img[@alt='Now Showing']")
@@ -49,19 +52,24 @@ public class MoviePage {
         }
     }
 
-//    // Get movie name
+    // Get movie name
     public boolean isMovieNameDisplayed() {
         return movieName.isDisplayed();
     }
 
     // Check if poster is visible
     public boolean isPosterDisplayed() {
-        return moviePoster.isDisplayed();
+    	return WaitUtils.waitForVisibility(driver, moviePoster).isDisplayed();
+    }
+    
+    // Check if detailed is visible
+    public boolean isDetailedPageDisplayed() {
+    	return WaitUtils.waitForVisibility(driver, movieDetailed).isDisplayed();
     }
 
     // Check if booking option is available
     public boolean isBookingOptionAvailable() {
-        return bookingOption.isDisplayed();
+    	return WaitUtils.waitForVisibility(driver, bookingOption).isDisplayed();
     }
 
     // Navigate to Movies tab
@@ -72,7 +80,6 @@ public class MoviePage {
     // Navigate to Explore Upcoming Movies
     public void clickExploreUpcomingMovies() {
     	WaitUtils.waitForClickability(driver, exploreUpcomingMoviesImgLink).click();
-//    	exploreUpcomingMoviesImgLink.click();
     }
 
     // Validate "In Cinemas Near You" link
