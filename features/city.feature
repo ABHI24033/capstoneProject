@@ -12,6 +12,8 @@ Feature: City Search Module
     Examples:
     |city  |
     |Ranchi|
+    |Delhi |
+    |Patna |
 
   @InvalidCitySearch
   Scenario Outline: Search for an invalid city name

@@ -104,7 +104,6 @@ public class LoginPage {
 		WebElement mobileField = driver.findElement(By.id("userMobileNumber"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].value = '';", mobileField);
-		System.out.println("deleted");
 		Thread.sleep(3000);
 	    mobileField.sendKeys(number);
 	}

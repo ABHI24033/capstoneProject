@@ -16,6 +16,7 @@ Feature: Login to BookMyShow
     Examples:
     |city  |phone     |
     |Ranchi|8709095528|
+    |Patna |6200552705|
 
   @InvalidLogin
   Scenario Outline: Invalid login with mobile
